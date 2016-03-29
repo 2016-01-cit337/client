@@ -12,6 +12,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  padding-top:50px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -23,9 +24,10 @@ body {
 }
 
 /* Custom page header */
-.header {
+.navbar {
   /* border-bottom: 1px solid #e5e5e5; */
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding-right: 25px;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -34,10 +36,79 @@ body {
     line-height: 40px;
     padding-bottom: 19px;
   }
+
+  .navbar-brand {
+    color: #b59a57;
+    font-size: 24px;
+    padding-left: 10px;
+  }
+}
+
+.divider-vertical {
+  height: 50px;
+  margin: 0 9px;
+  border-left: 1px solid #F2F2F2;
+  border-right: 1px solid #FFF;
+}
+
+.main {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.sidebar {
+  font-size: 16px;
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 0px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #cbb889;
+  border-right: 1px solid #000000;
+  padding-top: 10px;
+
+  li {
+    background-color: #b59a57;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+
+  li > a:hover {
+    background-color: rgba(90, 77, 43, .5);
+  }
+
+  .active {
+    background-color: rgba(90, 77, 43, .8)
+  }
+
+  a {
+    color: #fff;
+    font-weight: 500;
+  }
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
 }
 
 .container {
 
+}
+
+.panel-heading {
+  color: #b59a57;
+  background-color: #222;
+
+}
+
+.panel {
+  border: 1px solid #222;
 }
 
 /* Custom page footer */
