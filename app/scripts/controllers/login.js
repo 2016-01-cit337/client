@@ -13,5 +13,5 @@ angular.module('clientApp')
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
-    ]
+    ];
   });

@@ -1,1 +1,43 @@
-<p>This is the register view.</p>
+<h1 class="page-header">Signup</h1>
+
+<div class="container-fluid">
+  <form class="form-horizontal" name="registerForm" ng-init="user = {}" ng-submit="register()">
+    <div class="form-group container-fluid">
+        <div class="row">
+          <div class="col-md-2" ng-model="err.firstName" ng-class="{true: 'has-error'}[err.firstName && !registerForm.firstName.$dirty]">
+            <input name="firstName" class="form-control" type="text" placeholder="First Name" ng-model="user.firstName">
+            <span class="help-block" ng-show="[err.firstName]">{{err.firstName}}</span>
+          </div>
+          <div class="col-md-2" ng-model="err.lastName" ng-class="{true: 'has-error'}[err.lastName  && !registerForm.lastName.$dirty]">
+            <input name="lastName" class="form-control" type="text" placeholder="Last Name" ng-model="user.lastName">
+            <span class="help-block" ng-show="[err.lastName]">{{err.lastName}}</span>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" ng-model="err.email" ng-class="{true: 'has-error'}[err.email  && !registerForm.email.$dirty]">
+          <input name="email" class="form-control" type="text" placeholder="Email" ng-model="user.email">
+          <span class="help-block" ng-show="[err.email]">{{err.email}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" ng-model="err.password" ng-class="{true: 'has-error'}[err.password  && !registerForm.password.$dirty]">
+          <input name="password" class="form-control" type="password" placeholder="Password" ng-model="user.password">
+          <span class="help-block" ng-show="[err.password]">{{err.password}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" ng-model="err.confirmPassword" ng-class="{true: 'has-error'}[err.confirmPassword  && !registerForm.confirmPassword.$dirty]">
+          <input name="confirmPassword" class="form-control" type="password" placeholder="Confirm Password" ng-model="user.confirmPassword">
+          <span class="help-block" ng-show="[err.confirmPassword]">{{err.confirm_password}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <button class="btn btn-default" type="submit">Create Account</button>
+        </div>
+      </div>
+  </div>
+  </form>
+</div>
