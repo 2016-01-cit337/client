@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope, $http, $location, $log, $cookieStore, $httpService) {
+  .controller('LoginCtrl', function ($scope, $http, $location, $log, $cookieStore) {
     $scope.err = false;
     $scope.login = function(){
       $scope.loginForm.$setPristine(true);
