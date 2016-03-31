@@ -21,7 +21,7 @@ angular.module('clientApp')
           }
         })
         .success(function(){
-          $window.location = '#/dashboard.html';
+          $window.location = '#/dashboard';
           $window.location.reload();
         });
     };
