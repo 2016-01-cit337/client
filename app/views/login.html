@@ -1,7 +1,7 @@
-<div ng-init="logo = true;" ng-include src=" 'views/header.html' "></div>
+<h1 class="page-header">Login</h1>
+
 <div class="container">
-  <h1>Login</h1>
-  <p class="bg-danger" ng-show="err == true" style="padding: 1em;">
+  <p class="bg-danger" ng-show="err" style="padding: 1em;">
     Your userid or password is incorrect. Correct the information and try again.
   </p>
   <form name="loginForm" ng-init="authInfo = {}" ng-submit="login()">
