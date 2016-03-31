@@ -1,7 +1,10 @@
 <h1 class="page-header">Login</h1>
 
+<p class="bg-danger" ng-show="err == true" style="padding:1em;">
+  Your username or password is incorrect.  Please try again or click SignUp to create an account.
+</p>
 <div class="container-fluid">
-<form class="form-horizontal">
+<form name="loginForm" ng-init="authInfo = {}" ng-submit="login()" class="form-horizontal">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
