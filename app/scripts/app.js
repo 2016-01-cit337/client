@@ -43,6 +43,10 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+      .when('/createboard', {
+        templateUrl: 'views/createboard.html',
+        controller: 'CreateBoardCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
