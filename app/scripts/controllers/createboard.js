@@ -8,9 +8,11 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('CreateboardCtrl', function () {
+  .controller('CreateboardCtrl', function ($scope, $http, $cookieStore) {
 
+    $scope.createBoard = function(){
+      
+    };
 
-    
 
   });
