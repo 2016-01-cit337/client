@@ -1,13 +1,15 @@
 <h1 class="page-header">Create Board</h1>
 
 <div class="container">
-  <form name="createBoardForm" ng-init="board = { owner = user }">
-    <div class="form-group">
+  <form name="createBoardForm" ng-init="board = { }" ng-submit="createBoard()">
+    <div class="form-group" ng-model="err.title" ng-class="{true: 'has-error'}[err.title && !createBoardForm.title.$dirty]">
       <label class="control-label">Title</label>
-      <input class="form-control" type="text" ng-model="board.title">
+      <input name="title" class="form-control" type="text" ng-model="board.title">
+      <span class="help-block" ng-show="[err.title]">{{err.title}}</span>
     </div>
-    <div class="form-group">
-      <textarea class="form-control" rows="8" ng-model="board.content"></textarea>
+    <div class="form-group" ng-model="err.content" ng-class="{true: 'has-error'}[err.content && !createBoardForm.content.$dirty]">
+      <textarea name="content" class="form-control" rows="8" ng-model="board.content"></textarea>
+      <span class="help-block" ng-show="[err.conent]">{{err.content}}</span>
     </div>
     <div class="form-group">
       <button class="btn btn-primary pull-right" type="submit">Create</button>

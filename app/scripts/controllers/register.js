@@ -21,6 +21,9 @@ angular.module('clientApp')
           }
         })
         .success(function(){
+          $cookieStore.put('user', data);
+          $http.defaults.headers.common['X-AUTH-TOKEN'] = data.token;
+          
           $window.location = '#/dashboard';
           $window.location.reload();
         });

@@ -8,10 +8,22 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('CreateboardCtrl', function ($scope, $http, $cookieStore) {
+  .controller('CreateBoardCtrl', function ($scope, $http, $cookieStore) {
 
     $scope.createBoard = function(){
-      
+      $http.post('api/board/create', $scope.board)
+        .error(function(data, status){
+          if(status === 400) {
+            $scope.err = data;
+            console.log($scope.err);
+          }
+        })
+        .success(function(data){
+          $scope.err = false;
+          console.log(data)
+          //$window.location = '#/dashboard';
+          //$window.location.reload();
+        });
     };
 
 
