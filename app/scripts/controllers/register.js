@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('RegisterCtrl', function ($scope, $http, $window) {
+  .controller('RegisterCtrl', function ($scope, $http, $window, $cookieStore, appService, $location) {
 
     $scope.register = function(){
       console.log($scope.user);
@@ -20,12 +20,12 @@ angular.module('clientApp')
             console.log($scope.err);
           }
         })
-        .success(function(){
+        .success(function(data){
           $cookieStore.put('user', data);
           $http.defaults.headers.common['X-AUTH-TOKEN'] = data.token;
-          
-          $window.location = '#/dashboard';
-          $window.location.reload();
+          $location.path('/boards');
+          appService.setActiveIndex(-1);
+          appService.setSidebarIndex(0);
         });
     };
   });

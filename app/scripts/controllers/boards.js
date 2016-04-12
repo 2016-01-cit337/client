@@ -13,11 +13,11 @@ angular.module('clientApp')
     $scope.getBoards = function () {
       $http.get('api/boards', null)
         .success(function (data, status) {
-          if(status == 200){
+          if(status === 200){
             $scope.boards = data;
           }
-        }).error(function (data, status) {
-          console.log("Error requesting boards");
+        }).error(function () {
+          console.log('Error requesting boards');
       });
     };
 

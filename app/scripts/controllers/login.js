@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope, $http, $location, $log, $cookieStore) {
+  .controller('LoginCtrl', function ($scope, $http, $location, $log, $cookieStore, appService) {
     $scope.err = false;
     $scope.login = function(){
       $scope.loginForm.$setPristine(true);
@@ -17,14 +17,16 @@ angular.module('clientApp')
     };
 
     var loginError = function(data, status){
-      if ( status == 401 || status == 400 ) {
+      if ( status === 401 || status === 400 ) {
         $scope.err = true;
       }
     };
-    
-    var loginSuccess = function(data, status) {
+
+    var loginSuccess = function(data) {
       $cookieStore.put('user', data);
       $http.defaults.headers.common['X-AUTH-TOKEN'] = data.token;
-      $location.path("#/dashboard");
+      $location.path('/boards');
+      appService.setActiveIndex(-1);
+      appService.setSidebarIndex(0);
     };
   });

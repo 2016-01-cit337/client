@@ -1,0 +1,8 @@
+<div class="col-sm-3 col-md-2 sidebar" ng-controller="SidebarCtrl">
+  <ul class="nav nav-sidebar">
+    <li ng-repeat="link in links" ng-class="{active: $index==selected}"
+        ng-show="{{link.cond}}" ng-click="select($index)">
+      <a ng-href="{{link.url}}">{{link.name}}</a>
+    </li>
+  </ul>
+</div>

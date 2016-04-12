@@ -14,8 +14,8 @@ angular.module('clientApp')
       $http.post('api/boards/create', $scope.board)
         .success(function(data, status) {
           $scope.err = false;
-          if (status == 201) {
-            $location.path('/boards/' + data.id)
+          if (status === 201) {
+            $location.path('/boards/' + data.id);
           }
         })
         .error(function(data, status){
