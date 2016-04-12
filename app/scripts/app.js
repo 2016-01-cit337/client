@@ -47,6 +47,14 @@ angular
         templateUrl: 'views/createboard.html',
         controller: 'CreateBoardCtrl'
       })
+      .when('/boards', {
+        templateUrl: 'views/boards.html',
+        controller: 'BoardsCtrl'
+      })
+      .when('/boards/:boardId', {
+        templateUrl: 'views/board.html',
+        controller: 'BoardCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

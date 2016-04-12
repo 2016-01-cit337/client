@@ -8,21 +8,21 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('CreateBoardCtrl', function ($scope, $http, $cookieStore) {
+  .controller('CreateBoardCtrl', function ($scope, $http, $cookieStore, $location) {
 
     $scope.createBoard = function(){
-      $http.post('api/board/create', $scope.board)
+      $http.post('api/boards/create', $scope.board)
+        .success(function(data, status) {
+          $scope.err = false;
+          if (status == 201) {
+            $location.path('/boards/' + data.id)
+          }
+        })
         .error(function(data, status){
           if(status === 400) {
             $scope.err = data;
             console.log($scope.err);
           }
-        })
-        .success(function(data){
-          $scope.err = false;
-          console.log(data)
-          //$window.location = '#/dashboard';
-          //$window.location.reload();
         });
     };
 
