@@ -4,6 +4,8 @@
       <h1><span class="glyphicon glyphicon-list-alt"></span> {{board.title}}</h1>
       <h4><span class="glyphicon glyphicon-user"></span> {{board.user.firstName}} {{board.user.lastName}}</h4>
     </div>
+
+    <a ng-href="#/boards/{{boardId}}/createpost" ng-show="user">Create new post</a>
   </div>
 
   <div id="op">
@@ -17,20 +19,9 @@
   <div id="replies">
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="post in board.posts">
-        <h4>{{post.user.firstName}} {{post.user.lastName}}</h4>
+        <h4><span class="glyphicon glyphicon-user"></span> {{post.user.firstName}} {{post.user.lastName}}</h4>
         <p>{{post.content}}</p>
       </li>
     </ul>
-    <div id="reply">
-      <form name="createPostForm" ng-init="post = { }" ng-submit="createPost()">
-        <div class="form-group" ng-model="err.content" ng-class="{true: 'has-error'}[err.content && !createPostForm.content.$dirty]">
-          <textarea name="content" class="form-control" rows="8" ng-model="post.content"></textarea>
-          <span class="help-block" ng-show="[err.conent]">{{err.content}}</span>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary pull-right" type="submit">Reply</button>
-        </div>
-      </form>
-    </div>
   </div>
 </div>

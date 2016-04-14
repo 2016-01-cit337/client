@@ -8,8 +8,8 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('CreateBoardCtrl', function ($scope, $http, $cookieStore, $location) {
-
+  .controller('CreateBoardCtrl', function ($scope, $http, $location) {
+    
     $scope.createBoard = function(){
       $http.post('api/boards/create', $scope.board)
         .success(function(data, status) {

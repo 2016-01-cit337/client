@@ -8,7 +8,9 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('BoardsCtrl', function ($scope, $http) {
+  .controller('BoardsCtrl', function ($scope, $http, $cookieStore) {
+
+    $scope.user = $cookieStore.get('user');
 
     $scope.getBoards = function () {
       $http.get('api/boards', null)

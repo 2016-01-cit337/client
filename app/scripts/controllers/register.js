@@ -21,11 +21,8 @@ angular.module('clientApp')
           }
         })
         .success(function(data){
-          $cookieStore.put('user', data);
-          $http.defaults.headers.common['X-AUTH-TOKEN'] = data.token;
-          $location.path('/boards');
-          appService.setActiveIndex(-1);
-          appService.setSidebarIndex(0);
+          $location.path('/login');
+          appService.setActiveIndex(3);
         });
     };
   });
