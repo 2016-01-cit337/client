@@ -1,12 +1,20 @@
 <div>
-  <h1 class="page-header">{{board.title}}</h1>
-  <h4>{{board.userFirstName}} {{board.userLastName}}</h4>
-
-  <div id="op">
-    <p>{{board.content}}</p>
+  <div id="board-header">
+    <div class="page-header">
+      <h1><span class="glyphicon glyphicon-list-alt"></span> {{board.title}}</h1>
+      <h4><span class="glyphicon glyphicon-user"></span> {{board.user.firstName}} {{board.user.lastName}}</h4>
+    </div>
   </div>
 
-  <div id="replies" class="container">
+  <div id="op">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <p>{{board.content}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div id="replies">
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="post in board.posts">
         <h4>{{post.user.firstName}} {{post.user.lastName}}</h4>

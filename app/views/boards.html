@@ -5,8 +5,9 @@
 <div id="boards">
   <div class="list-group">
     <a href="#/boards/{{board.id}}" class="list-group-item" ng-repeat="board in boards">
-      <h4>{{board.title}}</h4>
-      <p>{{board.user.firstName}} {{board.user.lastName}}</p>
+      <h3><span class="glyphicon glyphicon-list-alt"></span> {{board.title}}</h3>
+
+      <p><span class="glyphicon glyphicon-user"></span> {{board.user.firstName}} {{board.user.lastName}}</p>
     </a>
   </div>
 </div>
