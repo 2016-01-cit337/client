@@ -34,4 +34,8 @@ angular.module('clientApp')
       $location.path('/');
       appService.setActiveIndex(0);
     };
+
+    $scope.$on('onLogin', function() {
+      $scope.user = $cookieStore.get('user');
+    });
   });

@@ -28,5 +28,7 @@ angular.module('clientApp')
       $location.path('/boards');
       appService.setActiveIndex(-1);
       appService.setSidebarIndex(0);
+      
+      $scope.$emit('onLogin');
     };
   });
