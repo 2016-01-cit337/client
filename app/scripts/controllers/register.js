@@ -17,10 +17,9 @@ angular.module('clientApp')
         .error(function(data, status){
           if(status === 400) {
             $scope.err = data;
-            console.log($scope.err);
           }
         })
-        .success(function(data){
+        .success(function(){
           $location.path('/login');
           appService.setActiveIndex(3);
         });
