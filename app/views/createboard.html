@@ -9,7 +9,7 @@
     </div>
     <div class="form-group" ng-model="err.content" ng-class="{true: 'has-error'}[err.content && !createBoardForm.content.$dirty]">
       <textarea name="content" class="form-control" rows="8" ng-model="board.content"></textarea>
-      <span class="help-block" ng-show="[err.conent]">{{err.content}}</span>
+      <span class="help-block" ng-show="[err.content]">{{err.content}}</span>
     </div>
     <div class="form-group">
       <button class="btn btn-primary pull-right" type="submit">Create</button>
