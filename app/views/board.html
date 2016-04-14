@@ -1,3 +1,4 @@
+<a class="btn btn-default pull-right" ng-href="#/boards/{{boardId}}/createpost" ng-show="user">Create new post</a>
 <div>
   <div id="board-header">
     <div class="page-header">
@@ -5,7 +6,6 @@
       <h4><span class="glyphicon glyphicon-user"></span> {{board.user.firstName}} {{board.user.lastName}}</h4>
     </div>
 
-    <a ng-href="#/boards/{{boardId}}/createpost" ng-show="user">Create new post</a>
   </div>
 
   <div id="op">
