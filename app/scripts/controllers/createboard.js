@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:CreateboardCtrl
+ * @name clientApp.controller:CreateBoardCtrl
  * @description
  * # CreateboardCtrl
  * Controller of the clientApp
